@@ -14,7 +14,7 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 
-#freebies class
+#freebies table
 class Freebies(Base):
     __tablename__='freebies'
     __table_args__ = {'extend_existing': True}
@@ -36,7 +36,7 @@ class Freebies(Base):
         return f"{self.dev.name} owns a {self.item_name} from {self.company.name}"
 
 
-
+#companies table
 class Company(Base):
     __tablename__ = 'companies'
 
@@ -63,6 +63,7 @@ class Company(Base):
         )
         return freebie
 
+#devs table
 class Dev(Base):
     __tablename__ = 'devs'
 
